@@ -94,7 +94,7 @@ or CELLECT-MAGMA:
 snakemake --use-conda --conda-frontend mamba -j -s cellect-magma.snakefile --configfile config.yml
 ```
 
-Note that if mamba is unavailable to you, the `--conda-frontend` flag can be excluded. We recommend running with `-j` as it will use all available cores. Specifying `-j 4` will use up to 4 cores. 
+If mamba is unavailable to you, the `--conda-frontend` flag can be omitted. We recommend running with `-j` as it will use all available cores. Specifying `-j 4` will use up to 4 cores. 
 
 3. **Inspect the output**:
 
