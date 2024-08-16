@@ -64,7 +64,7 @@ CELLECT uses the workflow management software [**Snakemake**](https://snakemake.
 conda install -c bioconda -c conda-forge snakemake=6.0.5
 ```
 
-(Notice the version requirement for snakemake. This ensures that snakemake avoids exceptions and [runs as fast as possible](https://snakemake.readthedocs.io/en/stable/project_info/history.html#id1)). Next, to speed up creating the necessary environment for CELLECT, we highly recommend installing mamba, although this is not strictly necessary:
+(Notice the version requirement for snakemake. This ensures that snakemake avoids exceptions and [runs as fast as possible](https://snakemake.readthedocs.io/en/stable/project_info/history.html#id1)). Next, to speed up snakemake in creating the necessary environments for CELLECT, we highly recommend installing mamba, although this is not strictly necessary:
 
 ```bash
 conda install -c conda-forge mamba
