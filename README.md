@@ -70,7 +70,7 @@ conda install -c bioconda -c conda-forge snakemake=6.0.5
 conda install -c conda-forge mamba
 ```
 
-The available versions of mamba is tied to your current version of conda, and thus no explicit version is specified here. For reference, CELLECT has been succesfully run on the combination of ```mamba 1.5.8``` and ```conda 24.7.1```
+The available versions of mamba is tied to your current version of conda, and thus no explicit version is specified here. For reference, CELLECT has been succesfully run on the combination of `mamba 1.5.8` and `conda 24.7.1`
 
 
 ## Getting started with CELLECT
@@ -94,7 +94,7 @@ or CELLECT-MAGMA:
 snakemake --use-conda --conda-frontend mamba -j -s cellect-magma.snakefile --configfile config.yml
 ```
 
-Note that if mamba is unavailable to you, the '--conda-frontend' flag can be excluded. We recommend running with `-j` as it will use all available cores. Specifying `-j 4` will use up to 4 cores. 
+If mamba is unavailable to you, the `--conda-frontend` flag can be omitted. We recommend running with `-j` as it will use all available cores. Specifying `-j 4` will use up to 4 cores. 
 
 3. **Inspect the output**:
 
