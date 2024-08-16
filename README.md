@@ -61,14 +61,16 @@ The `--recurse-submodules` is needed to clone the [git submodule](https://git-sc
 CELLECT uses the workflow management software [**Snakemake**](https://snakemake.readthedocs.io/en/stable/). To make things easier for you, CELLECT snakemake workflow utilises **conda environments** to avoid any issues with software dependencies and versioning. CELLECT snakemake workflow will automatically install all necessary dependencies. All you need to do is to install [anaconda](https://docs.anaconda.com/anaconda/install/) or [miniconda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) (if conda is not already present on your system) and then [install snakemake](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html):
    
 ```bash
-conda install -c bioconda -c conda-forge snakemake">=5.27.4"
+conda install -c bioconda -c conda-forge snakemake=6.0.5
 ```
-(Notice the version requirement for snakemake. This ensures snakemake [runs as fast as possible](https://snakemake.readthedocs.io/en/stable/project_info/history.html#id1))
-If you have trouble installing snakemake, using the above command, then try out:
+
+(Notice the version requirement for snakemake. This ensures that snakemake avoids exceptions and [runs as fast as possible](https://snakemake.readthedocs.io/en/stable/project_info/history.html#id1)). Next, to speed up creating the necessary environment for CELLECT, we highly recommend installing mamba, although this is not strictly necessary:
+
 ```bash
 conda install -c conda-forge mamba
-mamba create -c conda-forge -c bioconda -n snakemake snakemake
 ```
+
+The available versions of mamba is tied to your current version of conda, and thus no explicit version is specified here. For reference, CELLECT has been succesfully run on the combination of ```mamba 1.5.8``` and ```conda 24.7.1```
 
 
 ## Getting started with CELLECT
@@ -83,16 +85,16 @@ A configuration file is provided and includes paths to example data that require
 CELLECT-LDSC:
 
 ```bash
-snakemake --use-conda -j -s cellect-ldsc.snakefile --configfile config.yml
+snakemake --use-conda --conda-frontend mamba -j -s cellect-ldsc.snakefile --configfile config.yml
 ```
 
 or CELLECT-MAGMA:
 
 ```bash
-snakemake --use-conda -j -s cellect-magma.snakefile --configfile config.yml
+snakemake --use-conda --conda-frontend mamba -j -s cellect-magma.snakefile --configfile config.yml
 ```
 
-We recommend running with `-j` as it will use all available cores. Specifying `-j 4` will use up to 4 cores. 
+Note that if mamba is unavailable to you, the '--conda-frontend' flag can be excluded. We recommend running with `-j` as it will use all available cores. Specifying `-j 4` will use up to 4 cores. 
 
 3. **Inspect the output**:
 
