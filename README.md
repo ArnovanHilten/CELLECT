@@ -96,6 +96,12 @@ snakemake --use-conda --conda-frontend mamba -j -s cellect-magma.snakefile --con
 
 If mamba is unavailable to you, the `--conda-frontend` flag can be omitted. We recommend running with `-j` as it will use all available cores. Specifying `-j 4` will use up to 4 cores. 
 
+As an alternative, feel free to use the pre-established conda environment containing the relevant versions of snakemake and mamba:
+
+```bash
+conda env create -f cellect_main.yml
+```
+
 3. **Inspect the output**:
 
 ```<BASE_OUTPUT_DIR>/<CELLECT-{LDSC,MAGMA}>/results/prioritization.csv```
